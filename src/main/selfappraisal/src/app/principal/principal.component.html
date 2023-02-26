@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<app-header></app-header>
+<app-profile></app-profile>
+<body>
+    <div class="buttons">
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="exportAll()">All Departments</button>
+        </div> 
+
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="export('EXTC')">Department of Electronics & Telecommunications Engineering</button>
+        </div> 
+
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="export('CS')">Department of Computer Engineering</button>
+        </div>
+       
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="export('CSE')"> Department of Computer Science & Engineering</button>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="export('APPLIEDSCIENCE')">Department of Applied Science & Humanities</button>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="export('EE')">Department of Electronics Engineering</button>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-primary" id="buttonProfessor" (click)="export('IT')">Department of Information Technology</button>
+        </div>
+
+    </div>
+</body>
+</html>

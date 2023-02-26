@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<app-header></app-header>
+<app-profile></app-profile>
+<body>
+    <div class="container">
+        <h4>Self Appraisal Form For Assistant Professors</h4>
+        <form (ngSubmit)="OnSubmit(professorForm)" #professorForm="ngForm" ngNativeValidate>
+
+            <div class="form-group" hidden>
+              <label for="id">Id:</label><br>
+              <input type="text" [(ngModel)]="data.id" ngModel name="id" class="form-control"  >
+            </div>
+
+            <div class="form-group" hidden>
+              <label for="designation">Designation:</label><br>
+              <input type="text" [(ngModel)]="data.designation" ngModel name="designation" class="form-control"  >
+            </div>
+
+            <div class="form-group">
+                <label for="year">1. Year of Assessment:</label><br>
+                <input type="date" [(ngModel)]="data.year" ngModel name="year" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="name">2. Name of the Professor in full (beginning with the surname):</label><br>
+                <input type="text" [(ngModel)]="data.name" ngModel name="name" class="form-control"  placeholder="Enter your Name" autocomplete="off"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="dob">3. Date of Birth:</label><br>
+                <input type="date" [(ngModel)]="data.dob" ngModel name="dob" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="qualifications">4. Qualifications:</label><br>
+                <input type="text" [(ngModel)]="data.qualifications" ngModel name="qualifications" autocomplete="off" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="subjectsTaught">5. Subjects taught in the year of appraisal:</label><br>
+                <input type="text" [(ngModel)]="data.subjectsTaught" ngModel name="subjectsTaught" autocomplete="off" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="doa">6. Date of appointment in the present institute:</label><br>
+                <input type="date" [(ngModel)]="data.doa" ngModel name="doa" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="experience">7. Overall teaching experience at college level (including experience
+                    gained in previous employment):</label><br>
+                <input type="text" [(ngModel)]="data.experience" ngModel name="experience" autocomplete="off" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="researchQualification">8. Research qualification acquired in the current year:</label><br>
+                <input type="text" [(ngModel)]="data.researchQualification" ngModel name="researchQualification" autocomplete="off" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group" id="pageb">
+                <label for="informationOnWorkload">9. Information on workload:</label><br>
+            </div>
+            <pre></pre>
+
+            <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-7btt"><span style="font-weight:bold">Level</span></th>
+                    <th class="tg-7btt"><span style="font-weight:bold">Subjects Taught</span></th>
+                    <th class="tg-7btt">Number of periods per week</th>
+                    <th class="tg-7btt"><span style="font-weight:bold">Total</span></th>
+                    <th class="tg-c3ow" style="border:0px"></th>
+                    <th class="tg-c3ow" style="border:0px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-c3ow"></td>
+                    <td class="tg-c3ow"></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Lectures</span></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Tutorials</span></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Practicals</span></td>
+                    <td class="tg-c3ow" style="border:0px"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow"><span style="font-weight:bold">UG</span></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Odd Semester</span></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.ugoddseml" ngModel name="ugoddseml" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.ugoddsemt" ngModel name="ugoddsemt" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.ugoddsemp" ngModel name="ugoddsemp" class="form-control"  ></td>
+                    <td class="tg-c3ow" style="border:0px"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow"></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Even Semester</span></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.ugevenseml" ngModel name="ugevenseml" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.ugevensemt" ngModel name="ugevensemt" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.ugevensemp" ngModel name="ugevensemp" class="form-control"  ></td>
+                    <td class="tg-c3ow" style="border:0px"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow"><span style="font-weight:bold">PG</span></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Odd Semester</span></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.pgoddseml" ngModel name="pgoddseml" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.pgoddsemt" ngModel name="pgoddsemt" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.pgoddsemp" ngModel name="pgoddsemp" class="form-control"  ></td>
+                    <td class="tg-c3ow" style="border:0px"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow"></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Even Semester</span></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.pgevenseml" ngModel name="pgevenseml" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.pgvensemt" ngModel name="pgvensemt" class="form-control"  ></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.pgevensemp" ngModel name="pgevensemp" class="form-control"  ></td>
+                    <td class="tg-c3ow" style="border:0px"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow"></td>
+                    <td class="tg-c3ow"><span style="font-weight:bold">Total work load (Session wise)</span></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.twl" ngModel name="twl" class="form-control"></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.twt" ngModel name="twt" class="form-control"></td>
+                    <td class="tg-c3ow"><input type="text" [(ngModel)]="data.twp" ngModel name="twp" class="form-control"></td>
+                    <td class="tg-c3ow" style="border:0px"></td>
+                  </tr>
+                </tbody>
+                </table>
+
+            <div class="form-group">
+                <label for="leaves">10. Number of leaves taken during:</label><br>
+                <label for="oddSem">Odd Semester:</label><br>
+                <input type="text" [(ngModel)]="data.oddSem" ngModel name="oddSem" class="form-control">
+                <label for="evenSem">Even Semester:</label><br>
+                <input type="text" [(ngModel)]="data.evenSem" ngModel name="evenSem" class="form-control">
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="lectureReport">11. Lecture Report (10*):</label><br>
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <th class="tg-cen"><span style="font-weight:bold">Semester</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Subject</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Number Of Lectures Targeted</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Number of lectures taken</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sem1" ngModel name="sem1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sub1" ngModel name="sub1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.noltar1" ngModel name="noltar1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.noltak1" ngModel name="noltak1" class="form-control"  ></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sem2" ngModel name="sem2" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sub2" ngModel name="sub2" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.noltar2" ngModel name="noltar2" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.noltak2" ngModel name="noltak2" class="form-control"  ></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sem3" ngModel name="sem3" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sub3" ngModel name="sub3" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.noltar3" ngModel name="noltar3" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.noltak3" ngModel name="noltak3" class="form-control"  ></td>
+                      </tr>
+                    </tbody>
+                    </table>
+                <label for="lectureReport">*No score if target not achieved</label><br>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="informationOnWorkload">12. Teaching methods used: (Please put tick marks in the box provided)
+                    (02)</label><br>
+                <label for="informationOnWorkload">(Teachers will have to keep a record of all YESs)</label><br>
+
+                <pre></pre>
+                
+                <div>
+                    <label for="informationOnWorkload">a. Encouraging questions in class</label>
+                    <input type="radio" [(ngModel)]="data.radiob" ngModel name="radiob" value="Yes"  >
+                    <label for="Yes">Yes</label>
+                    <input type="radio" [(ngModel)]="data.radiob" ngModel name="radiob" value="No"  >
+                    <label for="No">No</label>
+                </div>
+                <pre></pre>
+                <div>
+                    <label for="informationOnWorkload">b. Announcing topics for discussion in advance</label>
+                    <input type="radio" [(ngModel)]="data.radiob1" ngModel name="radiob1" value="Yes"  >
+                    <label for="Yes">Yes</label>
+                    <input type="radio" [(ngModel)]="data.radiob1" ngModel name="radiob1" value="No"  >
+                    <label for="No">No</label>
+                </div>
+                <pre></pre>
+                <div>
+                    <label for="informationOnWorkload">c. Holding seminars</label>
+                    <input type="radio" [(ngModel)]="data.radiob2" ngModel name="radiob2" value="Yes"  >
+                    <label for="Yes">Yes</label>
+                    <input type="radio" [(ngModel)]="data.radiob2" ngModel name="radiob2" value="No"  >
+                    <label for="No">No</label>
+                </div>
+                <pre></pre>
+                <div>
+                    <label for="informationOnWorkload">d. Use of audio-visual aids</label>
+                    <input type="radio" [(ngModel)]="data.radiob3" ngModel name="radiob3" value="Yes"  >
+                    <label for="Yes">Yes</label>
+                    <input type="radio" [(ngModel)]="data.radiob3" ngModel name="radiob3" value="No"  >
+                    <label for="No">No</label>
+                </div>
+                <pre></pre>
+                <div>
+                    <label for="informationOnWorkload">e. Arranging guest lectures</label>
+                    <input type="radio" [(ngModel)]="data.radiob4" ngModel name="radiob4" value="Yes"  >
+                    <label for="Yes">Yes</label>
+                    <input type="radio" [(ngModel)]="data.radiob4" ngModel name="radiob4" value="No"  >
+                    <label for="No">No</label>
+                </div>
+                <pre></pre>
+                <div>
+                    <label for="informationOnWorkload">f. Holding quizzes</label>
+                    <input type="radio" [(ngModel)]="data.radiob5" ngModel name="radiob5" value="Yes"  >
+                    <label for="Yes">Yes</label>
+                    <input type="radio" [(ngModel)]="data.radiob5" ngModel name="radiob5" value="No"  >
+                    <label for="No">No</label>
+                </div>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="informationOnWorkload">13. State any innovation introduced in teaching and/or conducting
+                    experiments as well as evaluation techniques:</label><br>
+                <input type="text" [(ngModel)]="data.evaluationTechniques" ngModel name="evaluationTechniques" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="informationOnWorkload">14. Academic and Professional Growth: (Attach annexure, if
+                    necessary, with details)</label><br>
+                <br>
+                <b>a. Faculty up gradation activities</b>
+
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <th class="tg-cen"><span style="font-weight:bold">Nature Of Program</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Organizing Institute/body</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Topic/Theme</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Duration</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Grade awarded, if any</span></th>
+                        <th class="tg-cen"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">Conference/ Seminar</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.csob" ngModel name="csob" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.cstt" ngModel name="cstt" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.csdu" ngModel name="csdu" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.csgrade" ngModel name="csgrade" class="form-control"  ></td>
+                        <td class="tg-cen"><span style="font-weight:bold">(06)</span></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">Workshop</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.wob" ngModel name="wob" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.wtt" ngModel name="wtt" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.wdu" ngModel name="wdu" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.wgrade" ngModel name="wgrade" class="form-control"  ></td>
+                        <td class="tg-cen" rowspan="2"><span style="font-weight:bold">(02</span></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">STTP (atleast 1 week duration)</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.stob" ngModel name="stob" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.sttt" ngModel name="sttt" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.stdu" ngModel name="stdu" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.stgrade" ngModel name="stgrade" class="form-control"  ></td>
+                      </tr>
+                    </tbody>
+                    </table>
+                <br>
+                <b>b. Research activities: (Attach annexure with details, if necessary) (05)</b>
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <th class="tg-cen"><span style="font-weight:bold">No. of research papers published in conferences/journals</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">No. of research projects guided at M. E Level</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Research grants awarded</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.rpapers" ngModel name="rpapers" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.rprojects" ngModel name="rprojects" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.rgrants" ngModel name="rgrants" class="form-control"  ></td>
+                      </tr>
+                    </tbody>
+                    </table>
+
+            <br>
+            <div id="pageb"> </div>
+            <b>c. Interaction with other Institutes ,Industry (10)</b>
+
+            <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-cen"><span style="font-weight:bold">Nature of role, e.g. resource person, consultant, guest lecturer</span></th>
+                    <th class="tg-cen"><span style="font-weight:bold">Name of institute or industry</span></th>
+                    <th class="tg-cen"><span style="font-weight:bold">Description of activity/contribution</span></th>
+                    <th class="tg-cen"><span style="font-weight:bold">Duration</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.nor1" ngModel name="nor1" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.noi1" ngModel name="noi1" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.des1" ngModel name="des1" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.dur1" ngModel name="dur1" class="form-control"  ></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.nor2" ngModel name="nor2" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.noi2" ngModel name="noi2" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.des2" ngModel name="des2" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.dur2" ngModel name="dur2" class="form-control"  ></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.nor3" ngModel name="nor3" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.noi3" ngModel name="noi3" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.des3" ngModel name="des3" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.dur3" ngModel name="dur3" class="form-control"  ></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.nor4" ngModel name="nor4" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.noi4" ngModel name="noi4" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.des4" ngModel name="des4" class="form-control"  ></td>
+                    <td class="tg-cen"><input type="text" [(ngModel)]="data.dur4" ngModel name="dur4" class="form-control"  ></td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="Administrative help">15. Administrative help rendered to institute and other Government bodies: : (Attach annexure, if necessary, with details) <b>(10)</b></label><br>
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <th class="tg-cen"><span style="font-weight:bold">Name of institute/Government body</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Role/Position/Name of Committee</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Description of Service/Contribution</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">Sardar Patel Institute of Technology</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.spiti1" ngModel name="spiti1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.spiti2" ngModel name="spiti2" class="form-control"  ></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">AICTE</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.aictei1" ngModel name="aictei1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.aicte2" ngModel name="aicte2" class="form-control"  ></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">DTE</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.dte1" ngModel name="dte1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.dte2" ngModel name="dte2" class="form-control"  ></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">Mumbai University</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.mum1" ngModel name="mum1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.mum2" ngModel name="mum2" class="form-control"  ></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><span style="font-weight:bold">Any Other</span></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.any1" ngModel name="any1" class="form-control"  ></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.any2" ngModel name="any2" class="form-control"  ></td>
+                      </tr>
+                    </tbody>
+                    </table>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="16. Goal Setting">16. Goal Setting</label><br>
+
+                <label for="16. Goal Setting1">16.1. What are your goals for the coming year and what actions will you take to accomplish these goals? (04)</label><br>
+                <input type="text" [(ngModel)]="data.goal1" ngModel name="goal1" class="form-control"  >
+
+                <label for="16. Goal Setting2">16.2. Activities undertaken towards achieving last year’s goals?</label><br>
+                <input type="text" [(ngModel)]="data.goal2" ngModel name="goal2" class="form-control"  >
+                
+                <label for="16. Goal Setting3">16.3. What else would help you to do your job better and provide greater job satisfaction? (03)</label><br>
+                <input type="text" [(ngModel)]="data.goal3" ngModel name="goal3" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="17. Developmental Planning">17.  Developmental Planning</label><br>
+
+                <label for="17.Developmental Planning1">17.1. What kinds of professional development activities would you like to do in coming year? (02)</label><br>
+                <input type="text" [(ngModel)]="data.dev1" ngModel name="dev1" class="form-control"  >
+
+                <label for="17. Developmental Planning2">17.2. What kind of support would you require to complete these activities? (02)</label><br>
+                <input type="text" [(ngModel)]="data.dev2" ngModel name="dev2" class="form-control"  >
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="anyotherinformation">18. Any other information about contribution (not conveyed above) and relevant to a proper assessment of activities.</label><br>
+                <input type="text" [(ngModel)]="data.anyotherinformation" ngModel name="anyotherinformation" class="form-control"  >
+
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="feedback">18. Feedback </label><br>
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <th class="tg-cen"><span style="font-weight:bold">Semester</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Subject</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Percentage Feedback</span></th>
+                        <th class="tg-cen"><span style="font-weight:bold">Cumulative feedback(to be filled by the Head of the Department)</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester1" ngModel name="semester1" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject1" ngModel name="subject1" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf1" ngModel name="pf1" class="form-control"></td>
+                        <td class="tg-cen" rowspan="7"><textarea [(ngModel)]="data.cf1" ngModel name="cf1" class="form-control"></textarea></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester2" ngModel name="semester2" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject2" ngModel name="subject2" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf2" ngModel name="pf2" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester3" ngModel name="semester3" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject3" ngModel name="subject3" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf3" ngModel name="pf3" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester4" ngModel name="semester4" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject4" ngModel name="subject4" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf4" ngModel name="pf4" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester5" ngModel name="semester5" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject5" ngModel name="subject5" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf5" ngModel name="pf5" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester6" ngModel name="semester6" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject6" ngModel name="subject6" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf6" ngModel name="pf6" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.semester7" ngModel name="semester7" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.subject7" ngModel name="subject7" class="form-control"></td>
+                        <td class="tg-cen"><input type="text" [(ngModel)]="data.pf7" ngModel name="pf7" class="form-control"></td>
+                      </tr>
+                    </tbody>
+                    </table>
+            </div>
+
+            <pre></pre>
+            <!-- <button [disabled]="addForm.invalid" class="btn btn-primary" type="submit">Submit</button> -->
+            <button class="btn btn-success" id="submit_button" type="submit">Submit</button>
+            <input type="button" class="btn btn-primary" id="printPageButton" value="Generate Report" onClick="window.print()">
+
+        </form>
+
+    </div>
+</body>
+
+</html>

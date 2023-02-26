@@ -1,0 +1,23 @@
+body{
+    background: rgb(237, 235, 235);
+    margin-left: 400px;
+    margin-right: 400px;
+} 
+
+.buttons{
+    margin-top: 100px;
+    text-align: center;
+}
+
+#buttonProfessor{
+    margin: 30px;
+}
+
+#buttonAssociate{
+    margin: 30px;
+}
+
+#buttonAssistant{
+    margin: 30px;
+}
+

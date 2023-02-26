@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<app-header></app-header>
+<body>
+    <div class="container">
+        <h4>Register Department of Computer Engineering Head</h4>
+        <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" ngNativeValidate>
+            <div class="form-group">
+                <label for="username">Email</label><br>
+                <input type="text" ngModel name="username" class="form-control" autocomplete="off" placeholder="Enter your Email" required>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="name">First Name</label><br>
+                <input type="text" ngModel name="firstname" class="form-control" autocomplete="off" placeholder="Enter your First Name" autocomplete="off" required>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="name">Last Name</label><br>
+                <input type="text" ngModel name="lastname" class="form-control" autocomplete="off" placeholder="Enter your Last name" autocomplete="off" required>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="name">Password</label><br>
+                <input type="password" ngModel name="password" class="form-control" autocomplete="off" placeholder="Enter your Password" autocomplete="off" required>
+            </div>
+
+            <pre></pre>
+
+            <!-- <div class="form-group">
+                <label for="name">Confirm Password</label><br>
+                <input type="password"  name="confirmPassword" class="form-control" autocomplete="off" placeholder="Confirm Password" autocomplete="off" required>
+            </div> -->
+
+            <pre></pre>
+
+            <!-- <button [disabled]="addForm.invalid" class="btn btn-primary" type="submit">Submit</button> -->
+            
+            <button class="btn btn-success" type="submit">Submit</button>
+            <a routerLink="../addForm" class="btn btn-link">Back to Admin Dashboard</a>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

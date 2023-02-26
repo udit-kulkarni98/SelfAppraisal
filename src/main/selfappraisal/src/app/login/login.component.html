@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<app-header></app-header>
+<body>
+
+    <div class="login">
+        <h4>Login</h4>
+        <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm" ngNativeValidate>
+            <div class="form-group">
+                <label for="username">Email</label><br>
+                <input type="text" ngModel name="username" [(ngModel)]="loginData.username" class="form-control"  autocomplete="off" placeholder="Enter your Email" required>
+            </div>
+
+            <pre></pre>
+
+            <div class="form-group">
+                <label for="name">Password</label><br>
+                <input type="password" ngModel name="password" [(ngModel)]="loginData.password" class="form-control"  placeholder="Enter your Password" autocomplete="off" required>
+            </div>
+
+            <!-- <button [disabled]="addForm.invalid" class="btn btn-primary" type="submit">Submit</button> -->
+            <pre></pre>
+            <button class="btn btn-success" type="submit">Submit</button>
+            <a routerLink="../signup" class="btn btn-link">New user ? Register</a>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

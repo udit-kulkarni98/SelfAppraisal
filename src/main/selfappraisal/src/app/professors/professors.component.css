@@ -1,0 +1,55 @@
+
+h4{
+
+    margin-bottom: 30px;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-cen{text-align:center;vertical-align:top}
+
+@media print {
+  #printPageButton {
+    display: none;
+  }
+}
+
+@media print {
+  #submit_button {
+    display: none;
+  }
+}
+
+@media print {
+  #logout {
+    display: none;
+  }
+}
+
+@media print {
+  #pageb { page-break-before: always; }
+}
+
+#submit_button{
+  margin-right: 10px;
+}
+/* @media print {
+  .btn btn-success {
+    display: none;
+  }
+} */
+
+/* @media print {
+  table{
+    font-size: 5px;
+  }
+} */
+
+/* 
+table {page-break-before: always; 
+  font-size: 10px;} */

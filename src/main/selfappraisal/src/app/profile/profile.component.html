@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <nav class="navbar navbar-dark bg-dark"> -->
+    <nav class="navbar navbar-light" style="background-color: #14A44D;">
+        <h5 style="color: white;">Welcome {{authService.getUser()?.firstname}} {{authService.getUser()?.lastname}}</h5>
+        <button type="button" class="btn btn-warning" id="logout" (click)="logout()">Logout</button>
+    </nav>
+</body>
+</html>
